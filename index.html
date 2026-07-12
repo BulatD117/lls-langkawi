@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLS Langkawi Trip Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    .hidden-force {
+        display: none !important;
+    }
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-black text-white px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3 bg-black p-1 rounded">
+            <img src="./images/Logo.jpeg" alt="LLS Logo" class="h-10 w-auto object-contain">
+            <div>
+                <div class="text-amber-500 font-bold text-lg leading-tight tracking-wide">LLS LANGKAWI</div>
+                <div class="text-xs tracking-widest text-gray-400">TRIP PLANNER</div>
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-6 items-center font-medium">
+            <a href="#" onclick="document.getElementById('contact-section').style.display='none';" class="...">Home</a>
+            <a href="#gallery" class="hover:text-amber-500 transition">Gallery</a>
+            <a href="#about" class="hover:text-amber-500 transition">about Us</a>
+            <a href="javascript:void(0)" onclick="document.getElementById('contact-section').style.display='block'; document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'});" class="hover:text-amber-500 transition cursor-pointer">Contact Us</a>
+            <a href="https://wa.me/601116069541" target="_blank" class="bg-amerald-500 text-white px-5 py-2 rounded-full hover:bg-emerald-600 transition flex items-center space-x-2">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </nav>
+
+    <div style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('./images/Banner.jpeg'); background-size: cover; background-position: center; height: 550px; display: flex; align-items: center; width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; color: white; position: relative; z-index: 10; text-align: left; width: 100%;">
+            
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight" style="font-size: 3.5rem; font-weight: 700; margin: 0; padding: 0; line-height: 1.1; color: #ffffff;">
+                LLS LANGKAWI
+            </h1>
+            
+            <h2 class="text-4xl md:text-5xl font-bold mt-1" style="font-size: 2.8rem; font-weight: 700; margin: 5px 0 0 0; padding: 0; line-height: 1.1; color: #fbbf24;">
+                TRIP PLANNER
+            </h2>
+            
+            <p class="mt-4 text-lg md:text-xl font-light" style="font-size: 1.2rem; max-width: 550px; margin-top: 16px; margin-bottom: 24px; line-height: 1.6; color: #f3f4f6; font-weight: 300;">
+                Premium transport, world-class Island Hopping at honest prices!
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <button type="button" onclick="showBooking()" class="bg-amber-500 text-black font-semibold px-6 py-3 rounded-lg flex item-center space-x-2 hover:bg-amber-600 transition">
+                    <i class="fas fa-box-open"></i>
+                    <span>VIEW PACKAGES</span>
+                <button onclick="window.open('https://form.jotform.com/261611947681059', '_blank')" 
+        class="border-2 border-white px-6 py-2 rounded-lg hover:bg-white hover:text-black transition">
+  <i class="far fa-calendar-alt"></i>
+  <span>BOOKING FORM</span>
+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 -mt-16 relative z-10">
+        <div class="bg-black text-white rounded-xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-2xl border border-gray-800">
+            <div class="flex items-center space-x-4 p-2">
+                <div class="w-12 h-12 bg-amber-500/10 border border-amber-500 text-amber-500 rounded-full flex items-center justify-center text-xl">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm">Trusted & Reliable</h4>
+                    <p class="text-xs text-gray-400">Local expert since 2018</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-2 md:border-x md:border-gray-800">
+                <div class="w-12 h-12 bg-amber-500/10 border border-amber-500 text-amber-500 rounded-full flex items-center justify-center text-xl">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm">Best Price Guarantee</h4>
+                    <p class="text-xs text-gray-400">Honest prices, no hidden fees</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-2">
+                <div class="w-12 h-12 bg-amber-500/10 border border-amber-500 text-amber-500 rounded-full flex items-center justify-center text-xl">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm">24/7 Customer Support</h4>
+                    <p class="text-xs text-gray-400">We're here to help you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+        </div>
+    <!-- 5. ISLAND HOPPING SECTION -->
+    <!-- MULA SECTION ISLAND HOPPING -->
+<section class="max-w-6xl mx-auto px-6 py-16 text-center">
+
+    <!-- Tambah teks di sini -->
+    <p class="text-lg font-semibold text-amber-600 mb-4">EXPLORE THE BEST OF LANGKAWI</p>
+
+<!-- Ikon Bulatan Atas -->
+<div class="w-12 h-12 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
+  <!-- Menggunakan ikon kapal/bot untuk melambangkan island hopping -->
+  <i class="fas fa-ship"></i>
+</div>
+
+<!-- Tulisan Kecil -->
+<span class="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1 block">ISLAND HOPPING</span>
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Island Hopping Tour</h3>
+    <p class="text-sm text-gray-600 mb-8">Visit the beautifull islands of Langkawi with snorkeling & beach activities.</p>
+    
+    <button onclick="toggleIslandPackages(this)" class="text-amber-600 font-semibold text-sm cursor-pointer underline">
+        <span>View Details</span>
+    </button>
+
+    <div id="all-island-packages" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+        
+        <!-- PACKAGE A -->
+        <div class="relative overflow-hidden rounded-2xl shadow-lg h-auto flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url('images/hopping-a.jpeg');">
+            <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 550</div>
+            <div class="relative z-10 text-white">
+                <h4 class="font-bold text-2xl text-amber-400">Package A</h4>
+                <p class="text-xs text-gray-300 mt-1">Duration: 3 Hours | Capacity: Up to 8 pax</p>
+                <ul class="mt-4 text-xs space-y-2 text-gray-200">
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Lion Rock View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Dayang Bunting Mountain View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Jong Island View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Dino Island View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Beach Swimming</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Pregnant Maiden Island (Land & visit lake)</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Eagle Watching at Singa Besar Island</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Beras Basah Island (Beach Stop)</li>
+                    <li class="pt-2 italic text-gray-400">*Entrance fee to Pregnant Maiden Lake is not included.</li>
+                </ul>
+                <a href="https://wa.me/601116069541?text=Hi%20LLS%20Langkawi,%20saya%20berminat%20dengan%20Island%20Hopping%20Package%20A" target="_blank" class="w-full mt-6 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now</a>
+            </div>
+        </div>
+
+        <!-- PACKAGE B -->
+        <div class="relative overflow-hidden rounded-2xl shadow-lg h-auto flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url('images/hopping-b.jpeg');">
+            <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 700</div>
+            <div class="relative z-10 text-white">
+                <h4 class="font-bold text-2xl text-amber-400">Package B</h4>
+                <p class="text-xs text-gray-300 mt-1">Duration: 4 Hours | Capacity: Up to 8 pax</p>
+                <ul class="mt-4 text-xs space-y-2 text-gray-200">
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Lion Rock View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Dayang Bunting Mountain View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Jong Island View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Dino Island View</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Fish Feeding</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Pregnant Maiden Island (Land & visit lake)</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Eagle Watching at Singa Besar Island</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Beras Basah Island (Beach Stop)</li>
+                    <li><i class="fas fa-star text-amber-400 mr-2"></i> Snorkeling</li>
+                    <li class="pt-2 italic text-gray-400">*Entrance fee to Pregnant Maiden Lake is not included.</li>
+                </ul>
+                <a href="https://wa.me/601116069541?text=Hi%20LLS%20Langkawi,%20saya%20berminat%20dengan%20Island%20Hopping%20Package%20B" target="_blank" class="w-full mt-6 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ======================================================== -->
+<!-- 2. MANGROVE TOUR SECTION                                 -->
+<!-- ======================================================== -->
+<!-- MULA SECTION MANGROVE -->
+    <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+
+        <!-- Ikon Bulatan Atas -->
+    <div class="w-12 h-12 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-leaf"></i>
+    </div>
+
+    <!-- Tulisan Kecil 'OUR PACKAGES' -->
+    <span class="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1 block">OUR PACKAGES</span>
+
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Mangrove Discovery Tour</h3>
+    <p class="text-sm text-gray-600 max-w-md mx-auto mb-4">Deep exploration into Kilim Geoforest Park, Bat Cave, Crocodile Cave, and eagle watching.</p>
+    
+    <button onclick="toggleMangrovePackages(this)" class="text-amber-600 font-semibold text-sm cursor-pointer">
+        <span>View Details</span>
+    </button>
+
+    <div id="all-mangrove-packages" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+        
+        <div class="p-8 rounded-2xl bg-cover bg-center shadow-lg text-white" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/package-a.jpeg');">
+            <h4 class="font-bold text-2xl text-amber-400">Package A (RM 350)</h4>
+            <ul class="mt-2 text-sm list-disc list-inside">
+                <li>Eagle watching</li>
+                <li>Fish farm</li>
+                <li>Fish restaurant</li>
+            </ul>
+            <a href="https://wa.me/601116069541" class="block mt-4 bg-green-500 py-2 rounded text-center font-bold">Book Package A</a>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-cover bg-center shadow-lg text-white" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/package-b.jpeg');">
+            <h4 class="font-bold text-2xl text-amber-400">Package B (RM 550)</h4>
+            <ul class="mt-2 text-sm list-disc list-inside">
+                <li>Eagle watching</li>
+                <li>River cruise</li>
+                <li>Monkey feeding</li>
+                <li>Crocodile cave</li>
+                <li>Bat cave</li>
+                <li>Kilim geopark</li>
+                <li>Andaman sea</li>
+                <li>Fish farm</li>
+            </ul>
+            <a href="https://wa.me/601116069541" class="block mt-4 bg-green-500 py-2 rounded text-center font-bold">Book Package B</a>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-cover bg-center shadow-lg text-white" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/package-c.jpeg');">
+            <h4 class="font-bold text-2xl text-amber-400">Package C (RM 750)</h4>
+            <ul class="mt-2 text-sm list-disc list-inside">
+                <li>Eagle watching</li>
+                <li>River cruise</li>
+                <li>Monkey feeding</li>
+                <li>Crocodile cave</li>
+                <li>Bat cave</li>
+                <li>Kilim geopark</li>
+                <li>Andaman sea</li>
+                <li>Dangli island (fish feeding)</li>
+            </ul>
+            <a href="https://wa.me/601116069541" class="block mt-4 bg-green-500 py-2 rounded text-center font-bold">Book Package C</a>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-cover bg-center shadow-lg text-white" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/package-d.jpeg');">
+            <h4 class="font-bold text-2xl text-amber-400">Package D (RM 770)</h4>
+            <ul class="mt-2 text-sm list-disc list-inside">
+                <li>Eagle watching</li>
+                <li>River cruise</li>
+                <li>Monkey feeding</li>
+                <li>Crocodile cave</li>
+                <li>Bat cave</li>
+                <li>Fish farm</li>
+                <li>Kilim geopark</li>
+                <li>Andaman sea</li>
+                <li>Dangli island (snorkeling)</li>
+                <li>Beach swimming</li>
+            </ul>
+            <a href="https://wa.me/601116069541" class="block mt-4 bg-green-500 py-2 rounded text-center font-bold">Book Package D</a>
+        </div>
+    </div>
+</section>
+<!-- TAMAT SECTION MANGROVE -->
+</div>
+    <!-- 3. PRIVATE TRANSPORT SECTION (PASTIKAN DITAMPAL DI SINI) -->
+<!-- ======================================================== -->
+<section class="max-w-6xl mx-auto px-6 py-16 clear-both block w-full text-center flex flex-col items-center justify-center">
+    
+    <!-- Ikon Bulatan Atas -->
+    <div class="w-12 h-12 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center text-xl mb-4 mx-auto backdrop-blur-sm">
+        <i class="fas fa-car"></i>
+    </div>
+
+    <!-- Tulisan Kecil 'OUR PACKAGES' -->
+    <span class="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1 block">OUR PACKAGES</span>
+
+    <!-- Tajuk Besar & Penerangan -->
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Private Transport Services</h3>
+    <p class="text-sm text-gray-600 max-w-md mx-auto mb-4">Airport transfer, hotel transfer and professional private transport around Langkawi.</p>
+    
+    <!-- Butang Suis View Details -->
+    <button onclick="toggleTransportPackages(this)" class="text-amber-600 hover:text-amber-700 font-semibold text-sm inline-flex items-center space-x-1 transition mx-auto focus:outline-none mb-8">
+        <span>View Details</span>
+        <span class="ml-1 transition-transform inline-block font-mono">→</span>
+    </button>
+
+    <!-- sxaKotak Penyembunyi Pakej -->
+    <div id="all-transport-packages" style="display: none;" class="w-full">
+        
+        <!-- Grid Pakej -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-4 text-left">
+
+            <!-- 1. SEDAN CAR (6 HOURS) -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/city-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 160</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">6 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Sedan Car</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-users mr-1.5"></i> Suitable for 1–3 passengers</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 2. SEDAN CAR (8 HOURS) -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/vios-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 250</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Sedan Car</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-users mr-1.5"></i> Suitable for 1–3 passengers</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 3. MPV CAR (6 HOURS) -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/avanza-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 200</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">6 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">MPV Car</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-users mr-1.5"></i> Suitable for 4–6 passengers</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 4. MPV CAR (8 HOURS) -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/sarena-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 350</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">MPV Car</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-users mr-1.5"></i> Suitable for 4–6 passengers</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 5. VAN (14 SEATER) -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/urvan-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 500</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Van (14 Seater)</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-users mr-1.5"></i> Suitable for up to 14 passengers</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 6. EXCLUSIVE VAN (10 SEATER) -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/starex-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 560</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Exclusive Van</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-users mr-1.5"></i> Suitable for up to 10 passengers</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 7. LUXURY MPV -->
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('images/alphard-.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 680</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 Hours Private</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Luxury MPV</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-star mr-1.5 text-amber-400"></i> Premium Comfort Experience</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi..." target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book Now via WhatsApp</a>
+                </div>
+            </div>
+
+        </div> <!-- Penutup grid transport -->
+    </div> <!-- Penutup #all-transport-packages -->
+</section>
+<section class="max-w-6xl mx-auto px-6 py-16 text-center">
+
+    <!-- Ikon Bulatan Atas -->
+    <div class="w-12 h-12 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-motorcycle"></i> <!-- Ikon ini lebih sesuai untuk ATV -->
+    </div>
+
+    <!-- Tulisan Kecil 'OUR PACKAGES' -->
+    <span class="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1 block">OUR PACKAGES</span>
+
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Langkawi ATV Adventure</h3>
+    <p class="text-sm text-gray-600 mb-8">Off-road ATV experience through scenic Langkawi trails.</p>
+
+    <button onclick="toggleATV(this)" class="text-amber-600 font-semibold text-sm cursor-pointer underline">
+        <span>View Details</span>
+    </button>
+
+    <div id="atv-package" style="display: none;" class="mt-8 flex justify-center">
+        <div class="relative overflow-hidden rounded-2xl shadow-lg h-auto w-full md:w-2/3 p-8 bg-cover bg-center text-left" style="background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('Images/atv-adventure.jpeg');">
+            <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-4 py-2 rounded-xl shadow-lg">RM 350</div>
+            
+            <div class="relative z-10 text-white">
+                <h4 class="font-bold text-2xl text-amber-400">ATV Adventure</h4>
+                <p class="mt-2 text-sm text-gray-300">Duration: 90 MIN</p>
+                
+                <ul class="mt-6 space-y-3 text-sm text-gray-200">
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Paddy Field</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Water Dam</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Rubber Tree Plantation</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Hidden Waterfall</li>
+                    <li><i class="fas fa-check text-blue-400 mr-2"></i> Village Tour</li>
+                </ul>
+
+                <a href="https://wa.me/601116069541?text=Hi%20LLS%20Langkawi,%20saya%20berminat%20dengan%20pakej%20ATV%20Adventure" target="_blank" class="block w-full mt-8 bg-amber-500 hover:bg-amber-600 text-white text-center py-3 rounded-xl font-bold transition shadow-md">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16 text-center">
+
+    <!-- Ikon Bulatan Atas -->
+    <div class="w-12 h-12 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="fas fa-anchor"></i> <!-- Ikon sauh (anchor) sesuai untuk cruise -->
+    </div>
+
+    <!-- Tulisan Kecil 'OUR PACKAGES' -->
+    <span class="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1 block">OUR PACKAGES</span>
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Langkawi Sunset Cruise</h3>
+    <p class="text-sm text-gray-600 mb-8">Relex and enjoy the stunning sunset view over the Andaman Sea.</p>
+
+    <button onclick="toggleSunset(this)" class="text-amber-600 font-semibold text-sm cursor-pointer underline">
+        <span>View Details</span>
+    </button>
+
+    <div id="sunset-packages" style="display: none;" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="relative overflow-hidden rounded-2xl shadow-lg h-96 flex flex-col justify-end p-6 bg-cover bg-center text-left" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('Images/sunset-1.jpeg');">
+            <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-4 py-2 rounded-xl">RM 230</div>
+            <div class="relative z-10 text-white">
+                <h4 class="font-bold text-xl text-amber-400">Alcohol Package</h4>
+                <p class="text-sm text-gray-200 mt-2">Sharing Standard + Free 5 Mins Rolls Royce JetCar</p>
+                <a href="https://wa.me/601116069541?text=Hi%20LLS,%20saya%20berminat%20pakej%20Sunset%20Cruise%20(Alcohol)" target="_blank" class="block mt-4 bg-amber-500 text-center py-2 rounded-lg font-bold">Book Now</a>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-2xl shadow-lg h-96 flex flex-col justify-end p-6 bg-cover bg-center text-left" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('Images/sunset-2.jpeg');">
+            <div class="absolute top-4 right-4 bg-blue-500 text-white font-bold px-4 py-2 rounded-xl">RM 200</div>
+            <div class="relative z-10 text-white">
+                <h4 class="font-bold text-xl text-blue-400">Non-Alcohol Package</h4>
+                <p class="text-sm text-gray-200 mt-2">Sharing Standard + Free 5 Mins Rolls Royce JetCar</p>
+                <a href="https://wa.me/601116069541?text=Hi%20LLS,%20saya%20berminat%20pakej%20Sunset%20Cruise%20(Non-Alcohol)" target="_blank" class="block mt-4 bg-blue-500 text-center py-2 rounded-lg font-bold">Book Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-16 clear-both block w-full text-center flex flex-col items-center justify-center">
+    <div class="w-12 h-12 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center text-xl mb-4 mx-auto backdrop-blur-sm">
+        <i class="fas fa-anchor"></i>
+    </div>
+    <span class="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1 block">OUR PACKAGES</span>
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Private Yacht Charter</h3>
+    <p class="text-sm text-gray-600 max-w-md mx-auto mb-4">Luxury private yacht experience for families, corporate events, or private parties.</p>
+    
+    <button onclick="toggleYachtPackages(this)" class="text-amber-600 hover:text-amber-700 font-semibold text-sm inline-flex items-center space-x-1 transition mx-auto focus:outline-none mb-8">
+        <span>View Details</span>
+        <span class="ml-1 transition-transform inline-block font-mono">→</span>
+    </button>
+
+    <div id="all-yacht-packages" style="display: none;" class="w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-4 text-left">
+            <div class="relative overflow-hidden rounded-2xl shadow-lg group h-96 flex flex-col justify-end p-6 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), rgba(0,0,0,0)), url('private_yacht.jpeg');">
+                <div class="absolute top-4 right-4 bg-amber-500 text-white font-bold px-3 py-1 rounded-xl text-sm z-10 shadow">RM 1,800</div>
+                <div class="relative z-10 w-full">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Private Charter</span>
+                    <h4 class="text-xl font-bold text-white mt-1">Premium Private Yacht</h4>
+                    <p class="text-xs text-gray-300 mt-2 flex items-center"><i class="fas fa-user-friends mr-1.5"></i> Custom itinerary & privacy</p>
+                    <a href="https://wa.me/60123456789?text=Hi%20LLS%20Langkawi%20berminat%20Private%20Yacht" target="_blank" class="w-full mt-4 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-2.5 px-4 rounded-xl transition text-center block shadow-md">Book via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+    <p class="text-gray-600 leading-relaxed mb-8">
+      Welcome to <strong>LLS Langkawi Trip Planner</strong> – your trusted local partner for unforgettable experiences in Langkawi.
+      <br><br>
+      We specialize in providing private tours, airport transfers, island adventures, and customized travel experiences designed to suit families, couples, groups, and corporate travellers visiting the beautiful island of Langkawi.
+    </p>
+
+    <!-- Services List -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-8">
+      <div class="flex items-center space-x-2"><span class="text-xl">🚐</span><span>Private Transportation</span></div>
+      <div class="flex items-center space-x-2"><span class="text-xl">🏝️</span><span>Island Hopping Tours</span></div>
+      <div class="flex items-center space-x-2"><span class="text-xl">🌿</span><span>Mangrove Tours</span></div>
+      <div class="flex items-center space-x-2"><span class="text-xl">🤿</span><span>Snorkeling Trips</span></div>
+      <div class="flex items-center space-x-2"><span class="text-xl">🌅</span><span>Sunset Dinner Cruises</span></div>
+      <div class="flex items-center space-x-2"><span class="text-xl">✈️</span><span>Airport Transfers</span></div>
+      <div class="flex items-center space-x-2"><span class="text-xl">📋</span><span>Customized Langkawi Itineraries</span></div>
+    </div>
+
+    <p class="text-gray-600 leading-relaxed mb-4">
+      At LLS Langkawi Trip Planner, we believe every trip should be comfortable, enjoyable, and stress-free. Our goal is to help you discover the best of Langkawi while providing friendly service and memorable experiences from arrival to departure.
+    </p>
+    <p class="font-semibold text-gray-800 italic">"Let us plan, while you relax and enjoy Langkawi."</p>
+    <p class="mt-4 text-sm text-gray-500">📍 Based in Langkawi, Kedah, Malaysia.</p>
+  </div>
+</section>
+<section id="gallery" class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-8">Our Gallery</h2>
+    
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/Client-1.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-2.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-3.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-4.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-5.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-6.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-7.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-8.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-9.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+        <div class="swiper-slide"><img src="images/Client-10.jpeg" class="w-full h-64 object-cover rounded-xl shadow-lg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black text-white py-12 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-2 text-amber-500">Contact Us</h2>
+        <p class="text-gray-400 mb-10">We're happy to help you anytime.</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <a href="https://wa.me/601116069541" target="_blank" class="flex flex-col items-center hover:text-green-500 transition">
+                <div class="bg-zinc-800 p-4 rounded-full mb-3 border border-zinc-700">
+                    <i class="fab fa-whatsapp text-2xl text-green-500"></i>
+                </div>
+                <span class="font-semibold">WhatsApp</span>
+                <span class="text-xs text-gray-400">+60 11-1606 9541</span>
+            </a>
+
+            <a href="mailto:lislangkawiservices@gmail.com" class="flex flex-col items-center hover:text-blue-500 transition">
+                <div class="bg-zinc-800 p-4 rounded-full mb-3 border border-zinc-700">
+                    <i class="far fa-envelope text-2xl text-blue-500"></i>
+                </div>
+                <span class="font-semibold">Email</span>
+                <span class="text-xs text-gray-400">lislangkawiservices@gmail.com</span>
+            </a>
+
+            <a href="#" class="flex flex-col items-center hover:text-blue-600 transition">
+                <div class="bg-zinc-800 p-4 rounded-full mb-3 border border-zinc-700">
+                    <i class="fab fa-facebook text-2xl text-blue-600"></i>
+                </div>
+                <span class="font-semibold">Facebook</span>
+                <span class="text-xs text-gray-400">LLS Langkawi Trip Planner</span>
+            </a>
+
+            <a href="#" class="flex flex-col items-center hover:text-white transition">
+                <div class="bg-zinc-800 p-4 rounded-full mb-3 border border-zinc-700">
+                    <i class="fab fa-tiktok text-2xl text-white"></i>
+                </div>
+                <span class="font-semibold">TikTok</span>
+                <span class="text-xs text-gray-400">LLS LANGKAWI TRIP PLANNER</span>
+            </a>
+        </div>
+        <div class="mt-10 text-gray-500 text-sm">
+            &copy; 2025 LLS Langkawi Trip Planner. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleMangrovePackages(btn) {
+        const box = document.getElementById('all-mangrove-packages');
+        const txt = btn.querySelector('span');
+        
+        if (box.style.display === "none") {
+            box.style.display = "grid";
+            txt.innerText = "Hide Details";
+        } else {
+            box.style.display = "none";
+            txt.innerText = "View Details";
+        }
+    }
+</script>
+<script>
+    function toggleTransportPackages(btn) {
+        const box = document.getElementById('all-transport-packages');
+        const txt = btn.querySelector('span');
+        
+        if (box.style.display === "none") {
+            box.style.display = "block";
+            txt.innerText = "Hide Details";
+        } else {
+            box.style.display = "none";
+            txt.innerText = "View Details";
+        }
+    }
+</script>
+<script>
+    function toggleIslandPackages(btn) {
+        const box = document.getElementById('all-island-packages');
+        const txt = btn.querySelector('span');
+        
+        if (box.style.display === "none") {
+            box.style.display = "grid";
+            txt.innerText = "Hide Details";
+        } else {
+            box.style.display = "none";
+            txt.innerText = "View Details";
+        }
+    }
+</script>
+<script>
+    function toggleATV(btn) {
+        const box = document.getElementById('atv-package');
+        const txt = btn.querySelector('span');
+        
+        if (box.style.display === "none") {
+            box.style.display = "flex";
+            txt.innerText = "Hide Details";
+        } else {
+            box.style.display = "none";
+            txt.innerText = "View Details";
+        }
+    }
+</script>
+<script>
+    function toggleSunset(btn) {
+        const box = document.getElementById('sunset-packages');
+        const txt = btn.querySelector('span');
+        if (box.style.display === "none") {
+            box.style.display = "grid";
+            txt.innerText = "Hide Details";
+        } else {
+            box.style.display = "none";
+            txt.innerText = "View Details";
+        }
+    }
+    function showCategory(cat) {
+    const items = document.querySelectorAll('#service-list > div');
+    items.forEach(item => {
+        if (cat === 'all' || item.classList.contains('category-' + cat)) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+function showBooking() {
+    const section = document.getElementById('booking-section');
+    
+    // Jika ada kelas 'hidden', kita buang (munculkan)
+    // Jika tiada kelas 'hidden', kita tambah (sembunyikan)
+    if (section.classList.contains('hidden')) {
+        section.classList.remove('hidden');
+        section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        section.classList.add('hidden');
+    }
+}
+</script>
+
+<section id="booking-section" class="hidden max-w-md mx-auto px-4 py-10">
+    <h2 class="text-center font-bold text-2xl mb-6">BOOKING YOUR SLOT HERE!!</h2>
+
+    <div class="relative w-full max-w-5xl mx-auto mb-10 px-4 group">
+    
+    <button onclick="scrollSlider(-300)" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-3 rounded-full hover:bg-black transition">
+        &#10094;
+    </button>
+
+    <div id="image-slider" class="flex gap-6 overflow-x-hidden scroll-smooth pb-6">
+        <div class="flex-none w-72"><img src="images/mangrove.jpeg" class="w-full h-56 object-cover rounded-2xl shadow-lg"></div>
+        <div class="flex-none w-72"><img src="images/private transport.jpeg" class="w-full h-56 object-cover rounded-2xl shadow-lg"></div>
+        <div class="flex-none w-72"><img src="images/island hopping.jpeg" class="w-full h-56 object-cover rounded-2xl shadow-lg"></div>
+        <div class="flex-none w-72"><img src="images/atv-adventure.jpeg" class="w-full h-56 object-cover rounded-2xl shadow-lg"></div>
+        <div class="flex-none w-72"><img src="images/Jet-car.jpeg" class="w-full h-56 object-cover rounded-2xl shadow-lg"></div>
+        <div class="flex-none w-72"><img src="images/sunset.jpeg" class="w-full h-56 object-cover rounded-2xl shadow-lg"></div>
+    </div>
+
+    <button onclick="scrollSlider(300)" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 text-white p-3 rounded-full hover:bg-black transition">
+        &#10095;
+    </button>
+</div>
+
+    <div class="bg-white p-4 rounded-xl border mb-6 shadow-sm">
+        <label class="block font-bold text-gray-700 mb-3">Select Category</label>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="showCategory('all')" class="bg-green-600 text-white px-4 py-2 rounded-full text-xs font-bold">ALL</button>
+            <button onclick="showCategory('transport')" class="bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Transport</button>
+            <button onclick="showCategory('tours')" class="bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Tours</button>
+            <button onclick="showCategory('mangrove')" class="bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Mangrove</button>
+        </div>
+    </div>
+
+    <h3 class="font-bold text-gray-800 mb-4">Select Service</h3>
+    <div id="service-list" class="space-y-4">
+        
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/city-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Sedan Car</div><div class="text-xs text-gray-500">RM 160</div></div>
+            </div>
+            <button onclick="toggleModal('Sedan Car')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/vios-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Sedan Car</div><div class="text-xs text-gray-500">RM 250</div></div>
+            </div>
+            <button onclick="toggleModal('Sedan Car - Full Day Tour')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/avanza-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">MPV Car</div><div class="text-xs text-gray-500">RM 200</div></div>
+            </div>
+            <button onclick="toggleModal('MPV Car')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/sarena-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">MPV Car</div><div class="text-xs text-gray-500">RM 350</div></div>
+            </div>
+            <button onclick="toggleModal('MPV Car - Full Day Tour')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/urvan-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Van (14 Seater)</div><div class="text-xs text-gray-500">RM 500</div></div>
+            </div>
+            <button onclick="toggleModal('Van (14 Seater)')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/starex-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Exclusive Van</div><div class="text-xs text-gray-500">RM 560</div></div>
+            </div>
+            <button onclick="toggleModal('Exclusive Van')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-transport bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/alphard-.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Luxury MPV</div><div class="text-xs text-gray-500">RM 680</div></div>
+            </div>
+            <button onclick="toggleModal('Luxury MPV')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-tours bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/hopping-a.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Island Hopping</div><div class="text-xs text-gray-500">RM 550</div></div>
+            </div>
+            <button onclick="toggleModal('Island Hopping - 3 Hours')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-tours bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/hopping-b.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Island Hopping</div><div class="text-xs text-gray-500">RM 750</div></div>
+            </div>
+            <button onclick="toggleModal('Island Hopping - 4 Hours')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-mangrove bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/package-a.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Mangrove Tour</div><div class="text-xs text-gray-500">RM 350</div></div>
+            </div>
+            <button onclick="toggleModal('Mangrove Tour - 1 Hours')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-mangrove bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/package-b.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Mangrove Tour</div><div class="text-xs text-gray-500">RM 550</div></div>
+            </div>
+            <button onclick="toggleModal('Mangrove Tour - 2 Hours')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-mangrove bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/package-c.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Mangrove Tour</div><div class="text-xs text-gray-500">RM 750</div></div>
+            </div>
+            <button onclick="toggleModal('Mangrove Tour - 3 Hours')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <div class="category-mangrove bg-white p-4 rounded-xl border flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="Images/package-d.jpeg" class="w-12 h-12 rounded-lg object-cover">
+                <div><div class="font-bold">Mangrove Tour</div><div class="text-xs text-gray-500">RM 770</div></div>
+            </div>
+            <button onclick="toggleModal('Mangrove Tour - 4 Hours')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+        </div>
+
+        <!-- ATV Adventure -->
+    <div class="category-tours bg-white p-4 rounded-xl border flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <img src="Images/atv-adventure.jpeg" class="w-12 h-12 rounded-lg object-cover">
+            <div><div class="font-bold">ATV Adventure</div><div class="text-xs text-gray-500">RM 350</div></div>
+        </div>
+        <button onclick="toggleModal('ATV Adventure')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+    </div>
+
+    <!-- Sunset Dinner Cruise -->
+    <div class="category-tours bg-white p-4 rounded-xl border flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <img src="Images/sunset-1.jpeg" class="w-12 h-12 rounded-lg object-cover">
+            <div><div class="font-bold">Sunset Dinner Cruise</div><div class="text-xs text-gray-500">RM 230</div></div>
+        </div>
+        <button onclick="toggleModal('Sunset Dinner Cruise - Alcohol')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+    </div>
+
+    <div class="category-tours bg-white p-4 rounded-xl border flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <img src="Images/sunset-2.jpeg" class="w-12 h-12 rounded-lg object-cover">
+            <div><div class="font-bold">Sunset Dinner Cruise</div><div class="text-xs text-gray-500">RM 200</div></div>
+        </div>
+        <button onclick="toggleModal('Sunset Dinner Cruise - Non-Alcohol')" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold">
+    Tempah Sekarang
+</button>
+    </div>
+
+</div>
+
+    </div>
+</section>
+<script>
+    function scrollSlider(offset) {
+        const slider = document.getElementById('image-slider');
+        slider.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+    function toggleModal(namaPakej) {
+    const modal = document.getElementById('booking-modal');
+    const inputPakej = document.getElementById('input-pakej');
+    const title = document.getElementById('modal-title');
+
+    // Jika modal disembunyikan, kita bukanya
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        inputPakej.value = namaPakej; // Set nama pakej dalam borang
+        title.innerText = "Tempah: " + namaPakej;
+    } else {
+        modal.classList.add('hidden');
+    }
+}
+</script>
+
+<!-- Modal Borang Tempahan -->
+<div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 p-4">
+    <div class="bg-white p-6 rounded-xl w-full max-w-md shadow-2xl relative">
+        <!-- Butang Tutup (X) -->
+        <button onclick="toggleModal()" class="absolute top-2 right-4 text-2xl font-bold">&times;</button>
+        
+        <h3 id="modal-title" class="text-xl font-bold mb-4 text-center">Tempahan Anda</h3>
+        
+        <form action="https://formspree.io/f/xlgyyvoe" method="POST" class="space-y-4">
+            <!-- Pakej (Akan diubah oleh JavaScript) -->
+            <input type="hidden" name="Pakej" id="input-pakej" value="">
+            
+            <input type="text" name="nama" placeholder="Nama Penuh" required class="w-full p-2 border rounded-lg">
+            <input type="tel" name="telefon" placeholder="No. Telefon" required class="w-full p-2 border rounded-lg">
+            <input type="date" name="tarikh" required class="w-full p-2 border rounded-lg">
+            <input type="number" name="pax" placeholder="Bilangan Pax" required class="w-full p-2 border rounded-lg">
+            
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg font-bold">Hantar Tempahan</button>
+        </form>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<section id="contact-section" style="display: none;" class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6 relative">
+    <!-- Butang Close -->
+    <button onclick="document.getElementById('contact-section').style.display='none';" 
+            class="absolute top-0 right-0 text-gray-500 hover:text-red-600 text-2xl font-bold">
+      &times;
+    </button>
+
+    <h2 class="text-3xl font-bold mb-8">GET IN TOUCH</h2>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Bahagian Borang -->
+      <form class="space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded">
+        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded">
+        <textarea placeholder="Write Message..." class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
+        <button class="bg-red-700 text-white px-6 py-3 rounded w-full">SEND MESSAGE</button>
+      </form>
+
+      <!-- Bahagian Maklumat Hubungan -->
+      <div class="space-y-6">
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-phone-alt text-red-600 text-xl"></i>
+          <div>
+            <p class="font-bold">CALL NOW</p>
+            <a href="tel:+60162781318" class="text-blue-600">+601116069541</a>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-envelope text-red-600 text-xl"></i>
+          <div>
+            <p class="font-bold">EMAIL</p>
+            <a href="mailto:Alqadslangkawi@gmail.com" class="text-blue-600">llslangkawiservices@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
+          <div>
+            <p class="font-bold">ADDRESS</p>
+            <p>No 52, Kg Darat, Mukim Bohor, 07000, langkawi, Kedah.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 4 },
+    },
+  });
+</script>
+</body>
+</html>
